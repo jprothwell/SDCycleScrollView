@@ -446,6 +446,15 @@ NSString * const ID = @"cycleCell";
         [_timer invalidate];
         _timer = nil;
     }
+    else
+    {
+        [_timer invalidate];
+        _timer = nil;
+        
+        if (_autoScroll) {
+            [self setupTimer];
+        }
+    }
 }
 
 //解决当timer释放后 回调scrollViewDidScroll时访问野指针导致崩溃
